@@ -20,22 +20,22 @@
 		</div>
 		<div class="row mt">	
 			<div class="col-lg-8 col-lg-offset-2">
-				<form role="form">
+				<form action="./sendemail.php" method="POST" role="form">
 				  <div class="form-group">
-				    <input type="name" class="form-control" id="NameInputEmail1" placeholder="Your Name">
+				    <input type="text" class="form-control" id="NameInputEmail1" placeholder="Your Name" name="name">
 				    <br>
 				  </div>
 				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email">
 				    <br>
 				  </div>
 				  <div class="form-group">
-				    <input type="email" class="form-control" id="subjectEmail1" placeholder="Subject">
+				    <input type="text" class="form-control" id="subjectEmail1" placeholder="Subject" name="subject">
 				    <br>
 				  </div>
-				  <textarea class="form-control" rows="6" placeholder="Enter your text here"></textarea>
+				  <textarea class="form-control" rows="6" placeholder="Enter your text here" name="text"></textarea>
 				    <br>
-				  <button type="submit" class="btn btn-success">SUBMIT</button>
+				  <button type="submit" class="btn btn-success">SUBMIT</button> <?php if (isset($_GET["sent"])){?> <p> Sent </p> <?php }?>
 				</form>    			
 			</div>
 		</div><!-- /row -->
