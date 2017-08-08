@@ -22,10 +22,10 @@
 				  <div class="newWrapper">
 				    <div class="person1" style="float:left; display:inline-block; ">
 
-				      <span style="float:left;width: 40%;"> 
+				      <span style="float:left;width: 30%;"> 
 					<a href="blog.php?blog=<?=$blog?>"><img class="img-responsive" src="./blogs/<?=$blog?>.jpg" /></a>           
 				      </span>
-				      <span style="float:right;width: 55%;">
+				      <span style="float:right;width: 65%;">
 					<h3><a href="blog.php?blog=<?=$blog?>"><?=$array[0]?></a></h3>
 				      </span>
 				      
