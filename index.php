@@ -9,7 +9,7 @@
 
 
   <?php
-     $bloglist = array("leptonuniversality","gravitationalwaves");
+     $bloglist = array("genomeediting","gravitationalwaves","leptonuniversality");
      $row = 0;
      foreach ($bloglist as $blog) {
         $file = file_get_contents("./blogs/" . $blog . ".txt");
