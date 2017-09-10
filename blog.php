@@ -14,7 +14,7 @@
 				<div class="col-lg-8 col-lg-offset-2">
 				        <?php
                                            $file = file_get_contents("./blogs/" . $_GET["blog"] . ".txt");
-                                           $array = split("\n",$file);
+                                           $array = explode("\n",$file);
 					   echo "<h1>" . $array[0] . "</h1>";
 					   echo "<p><bd>" . $array[2] . "</bd></p>";
                                         ?>
@@ -22,7 +22,7 @@
 					<p><img class="img-responsive" src="./blogs/<?=$_GET["blog"]?>.jpg" alt=""></p>
 					<?php
 					   $file = file_get_contents("./blogs/" . $_GET["blog"] . ".txt");
-					   $array = split("\n",$file);
+					   $array = explode("\n",$file);
 					   $i = 0;
 					   foreach ($array as $paragraph) {
 					      if ($paragraph != "" && $i > 2) {

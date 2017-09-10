@@ -13,7 +13,7 @@
      $row = 0;
      foreach ($bloglist as $blog) {
         $file = file_get_contents("./blogs/" . $blog . ".txt");
-        $array = split("\n",$file);
+        $array = explode("\n",$file);
      ?>
 	<div id="<?= ($row % 2 == 0) ? "grey" : "white"?>">
 	    <div class="container">
