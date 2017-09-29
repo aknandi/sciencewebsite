@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">                                                                                                                                          
     <meta name="author" content="">                                                                                                                                                                       
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <link rel="icon" href="includes/favicon.jpg">
     <title>Science For Everyone</title>
     <!-- Bootstrap core CSS -->   
     <link href="assets/css/bootstrap.css" rel="stylesheet"> 

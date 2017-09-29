@@ -13,7 +13,7 @@
                                 <h3>ABOUT</h3>
                                 <hr>
                                 <p>
-There are so many fascinating things that we know about our world from scientific research: how mountains form, what the sun is made of, why the sky is blue and many others. But there are still many things we don't know. What makes up 95% of our universe? What is consciousness? Why do we sleep? How does a bicycle work? Every day scientists continue to find new exciting developments about the universe we live in at all scales from sub-atmoic particles to galaxies. <br/><br/>
+There are so many fascinating things that we know about our world from scientific research: how mountains form, what the sun is made of, why the sky is blue and many others. But there are still many things we don't know. What makes up 95% of our universe? What is consciousness? Why do we sleep? How does a bicycle work? Every day scientists continue to find new exciting developments about the universe we live in at all scales from sub-atomic particles to galaxies. <br/><br/>
 
 I am a particle physics research student with a strong interest in science communication. This site is based on my belief that it is very important for anyone to be able to read about to the latest interesting developments in science. More openess and communication between scientists and the public enourages the development of trust in science and promotes evidence-based reasoning.<br/><br/>
 
