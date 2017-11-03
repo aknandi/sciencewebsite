@@ -6,13 +6,38 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./">Science For Everyone</a>
+	  <?php
+	  if ($number_of_levels == 0) {
+	     echo '<a class="navbar-brand" href="./">Science For Everyone</a>';
+	  }
+	  elseif ($number_of_levels == 1) {
+	     echo '<a class="navbar-brand" href="../">Science For Everyone</a>';
+	  }
+	  elseif ($number_of_levels == 2) {
+	     echo '<a class="navbar-brand" href="../../">Science For Everyone</a>';
+	  }
+	  ?>
+
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="./">Home</a></li>
-            <li><a href="about.php">About</a></li>
-            <li><a href="contact.php">Contact</a></li>
+	  <?php
+	  if ($number_of_levels == 0) {
+	     echo '<li><a href="./">Home</a></li>';
+	     echo '<li><a href="about">About</a></li>';
+	     echo '<li><a href="contact">Contact</a></li>';
+	  }
+	  elseif ($number_of_levels == 1) {
+	     echo '<li><a href="../">Home</a></li>';
+	     echo '<li><a href="../about">About</a></li>';
+	     echo '<li><a href="../contact">Contact</a></li>';
+	  }
+	  elseif ($number_of_levels == 2) {
+	     echo '<li><a href="../../">Home</a></li>';
+	     echo '<li><a href="../../about">About</a></li>';
+	     echo '<li><a href="../../contact">Contact</a></li>';
+	  }
+	  ?>
           </ul>
         </div>
       </div>

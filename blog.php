@@ -3,6 +3,9 @@
 
 <?php include "./includes/preamble.php"; ?>
 
+<head>
+<title>Test</title>
+</head>
   <body>
 
 <?php include "./includes/header.php"; ?>
@@ -13,15 +16,23 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2">
 				        <?php
-                                           $file = file_get_contents("./blogs/" . $_GET["blog"] . ".txt");
+                                           $file = file_get_contents("./blogs/" . $blogName . ".txt");
                                            $array = explode("\n",$file);
 					   echo "<h1>" . $array[0] . "</h1>";
 					   echo "<p><bd>" . $array[2] . "</bd></p>";
+					   if($number_of_levels == 0) {
+					       echo '<p><img class="img-responsive" src="./blogs/' . $blogName . '.jpg" alt=""></p>';
+					   }
+					   elseif($number_of_levels == 1) {
+					       echo '<p><img class="img-responsive" src="../blogs/' . $blogName . '.jpg" alt=""></p>';
+					   }
+					   elseif($number_of_levels == 2) {
+					       echo '<p><img class="img-responsive" src="../../blogs/' . $blogName . '.jpg" alt=""></p>';
+					   }
+					   
                                         ?>
-					<!--<p><bd>1 August 2017</bd></p>-->
-					<p><img class="img-responsive" src="./blogs/<?=$_GET["blog"]?>.jpg" alt=""></p>
-					<?php
-					   $file = file_get_contents("./blogs/" . $_GET["blog"] . ".txt");
+				        <?php
+					   $file = file_get_contents("./blogs/" . $blogName . ".txt");
 					   $array = explode("\n",$file);
 					   $i = 0;
 					   foreach ($array as $paragraph) {
@@ -33,7 +44,17 @@
 					?>
 					<br>
 					<hr>
-					<p><a href="./"># Back</a></p>
+                                        <?php
+					if($number_of_levels == 0) {
+                                            echo '<p><a href="./">Back</a></p>';
+                                        }
+                                        elseif($number_of_levels == 1) {
+                                            echo '<p><a href="../">Back</a></p>';
+                                        }
+                                        elseif($number_of_levels == 2) {
+                                            echo '<p><a href="../../">Back</a></p>';
+                                        }
+					?>
 				</div>
 
 			</div><!-- /row -->

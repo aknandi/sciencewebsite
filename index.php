@@ -1,53 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-  <?php include "./includes/preamble.php"; ?>
+function get_correct_path($a, $b)
+{
+    $result = '';
+    $lena = strlen($a);
+    $lenb = strlen($b);
+    for($i=0; $i<$lena; $i++) {
+	for($j=0; $j<$lenb; $j++) {
+            if(substr($a, $i, $j+1) == substr($b, 0, $j+1)) {
+	        if($i+$j+1 == $lena) {
+   	            $result = substr($a, $i, $j+1);
+	        }
+            }
+            else continue;
+	}
+    }
+    return $result;
+}
+$overlap = get_correct_path(__DIR__,$_SERVER['REQUEST_URI']);
+$URL = str_replace($overlap,"",$_SERVER['REQUEST_URI']);
+// Do I want to include initial or trailing /'s
+$number_of_levels = substr_count(substr(trim($URL), 1),'/',0);
 
-  <body>
+$bloglist = array("graphene","quantumteleportation","genomeediting","gravitationalwaves","leptonuniversality");
 
-  <?php include "./includes/header.php"; ?>
+if($URL=='/') {
+    include 'home.php';
+}
+elseif($URL=='/about' || $URL=='/about/') {
+    include 'about.php';
+}
+elseif($URL=='/contact' || $URL=='/contact/') {
+    include 'contact.php';
+}   
+elseif(substr( $URL, 0, 5 ) == "/view") {
+    if(in_array(substr(strrchr($URL, "/"), 1),$bloglist)) {
+        $blogName = substr(strrchr($URL, "/"), 1);
+        include 'blog.php';	
+    }
+    elseif(in_array(substr(strrchr(substr(trim($URL), 0, -1), "/"), 1),$bloglist)) {
+        $blogName = substr(strrchr(substr(trim($URL), 0, -1), "/"), 1);
+	include 'blog.php';	
+    }
+    else {
+    	include '404.php';
+    }
+}
+else {
+    include '404.php';
+}
 
-
-  <?php
-     $bloglist = array("quantumteleportation","genomeediting","gravitationalwaves","leptonuniversality");
-     $row = 0;
-     foreach ($bloglist as $blog) {
-        $file = file_get_contents("./blogs/" . $blog . ".txt");
-        $array = explode("\n",$file);
-     ?>
-	<div id="<?= ($row % 2 == 0) ? "grey" : "white"?>">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-				  <div class="newWrapper">
-				    <div class="person1" style="float:left; display:inline-block; ">
-
-				      <span style="float:left;width: 30%;"> 
-					<a href="blog.php?blog=<?=$blog?>"><img class="img-responsive" src="./blogs/<?=$blog?>.jpg" /></a>           
-				      </span>
-				      <span style="float:right;width: 65%;">
-					<h3><a href="blog.php?blog=<?=$blog?>"><?=$array[0]?></a></h3>
-				      </span>
-				      
-				    </div>
-				  </div>
-				</div>
-
-			</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /grey -->
-  
-   <?php
-   $row = $row + 1;
-   }
-   ?>
-	
-  <?php include "./includes/footer.php"; ?>
-	
-	
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
-  </body>
-</html>
+?>
