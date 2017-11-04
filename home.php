@@ -10,7 +10,8 @@
 
   <?php
      $row = 0;
-     foreach ($bloglist as $blog) {
+     foreach ($bloglisthumanreadable as $blogname) {
+        $blog = str_replace("-","",$blogname);
         $file = file_get_contents("./blogs/" . $blog . ".txt");
         $array = explode("\n",$file);
      ?>
@@ -22,11 +23,11 @@
 				    <div class="person1" style="float:left; display:inline-block; ">
 
 				      <span style="float:left;width: 30%;"> 
-					<a href="view/<?=$blog?>"><img class="img-responsive" src="./blogs/<?=$blog?>.jpg" /></a>           
+					<a href="view/<?=$blogname?>"><img class="img-responsive" src="./blogs/<?=$blog?>.jpg" /></a>           
 				      </span>
 				      <span style="float:right;width: 65%;">
-					<h3><a href="view/<?=$blog?>"><?=$array[0]?></a></h3>
-					<h5><a href="view/<?=$blog?>"><?=$array[2]?></a></h5>
+					<h3><a href="view/<?=$blogname?>"><?=$array[0]?></a></h3>
+					<h5><a href="view/<?=$blognname?>"><?=$array[2]?></a></h5>
 				      </span>
 				      
 				    </div>

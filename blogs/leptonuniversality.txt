@@ -2,6 +2,8 @@ Scientists find hints challenging our understanding of the universe
 
 1 August 2017
 
+Event displays of the LHCb-detector. Copyright: LHCb/CERN.
+
 How much do we really understand our world? The Standard Model (SM) is our current best theory of what makes up the universe and how matter interacts. It explains the world around us, from light and radioactivity to what holds everything together. The model defines 13 fundamental particles and makes predictions on how they interact with each other. Predictions from the SM have been verified to incredible precision, 1 part in 10 billion (equivalent to measuring the width of the USA to within the width of a human hair), making it the most precise theory in the history of science. Formulated in the mid-1970s, the theory continues to hold strong, as no measurements have been made so far that directly contradict the SM. Yet despite this, we know it to be an incomplete theory, for example it doesn’t include gravity. Particle physicists are looking to find any weaknesses with the SM in the hope of improving our model of the universe.
 
 The Large Hadron Collider (LHC) at CERN in Geneva is the world’s most powerful particle accelerator; a 27km ring built 100m underground. Protons are accelerated close to the speed of light (travelling over 11,000 revolutions of the 27km ring per second) before colliding. Scientists working on the LHCb experiment, one of the four main experiments at the LHC, are constantly testing the SM, in more and more detail, to find its breaking point. Latest results from the LHCb experiment suggest we might be close.

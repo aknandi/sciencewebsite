@@ -9,7 +9,7 @@
 	$retval = mail ($to,$subject,$message);
 
 	if( $retval == true ) {
-	    header('Location: ./contact.php?sent');
+	    header('Location: ./contact?sent');
 	} else {
 	    echo "Message could not be sent...";
 	}

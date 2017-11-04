@@ -28,15 +28,15 @@
 					   }
 					   elseif($number_of_levels == 2) {
 					       echo '<p><img class="img-responsive" src="../../blogs/' . $blogName . '.jpg" alt=""></p>';
-					   }
-					   
+					   }					   
                                         ?>
 				        <?php
+					   //echo "<p><bd>" . $array[4] . "</bd></p>";
 					   $file = file_get_contents("./blogs/" . $blogName . ".txt");
 					   $array = explode("\n",$file);
 					   $i = 0;
 					   foreach ($array as $paragraph) {
-					      if ($paragraph != "" && $i > 2) {
+					      if ($paragraph != "" && $i > 4) {
 					         echo "<p>" . $paragraph . "</p>";
 					      }
 					      $i = $i + 1;

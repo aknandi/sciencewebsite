@@ -19,10 +19,10 @@ function get_correct_path($a, $b)
 }
 $overlap = get_correct_path(__DIR__,$_SERVER['REQUEST_URI']);
 $URL = str_replace($overlap,"",$_SERVER['REQUEST_URI']);
-// Do I want to include initial or trailing /'s
 $number_of_levels = substr_count(substr(trim($URL), 1),'/',0);
 
-$bloglist = array("graphene","quantumteleportation","genomeediting","gravitationalwaves","leptonuniversality");
+//$bloglist = array("graphene","quantumteleportation","genomeediting","gravitationalwaves","leptonuniversality");
+$bloglisthumanreadable = array("graphene","quantum-teleportation","genome-editing","gravitational-waves","lepton-universality");
 
 if($URL=='/') {
     include 'home.php';
@@ -30,16 +30,19 @@ if($URL=='/') {
 elseif($URL=='/about' || $URL=='/about/') {
     include 'about.php';
 }
-elseif($URL=='/contact' || $URL=='/contact/') {
+elseif($URL=='/contact' || $URL=='/contact/' || $URL=='/contact?sent') {
     include 'contact.php';
 }   
+elseif($URL=='/sendemail') {
+    include 'sendemail.php';
+}
 elseif(substr( $URL, 0, 5 ) == "/view") {
-    if(in_array(substr(strrchr($URL, "/"), 1),$bloglist)) {
-        $blogName = substr(strrchr($URL, "/"), 1);
+    if(in_array(substr(strrchr($URL, "/"), 1),$bloglisthumanreadable)) {
+        $blogName = str_replace("-","",substr(strrchr($URL, "/"), 1));
         include 'blog.php';	
     }
-    elseif(in_array(substr(strrchr(substr(trim($URL), 0, -1), "/"), 1),$bloglist)) {
-        $blogName = substr(strrchr(substr(trim($URL), 0, -1), "/"), 1);
+    elseif(in_array(substr(strrchr(substr(trim($URL), 0, -1), "/"), 1),$bloglisthumanreadable) && substr($URL, -1)=="/") {
+        $blogName = str_replace("-","",substr(strrchr(substr(trim($URL), 0, -1), "/"), 1));
 	include 'blog.php';	
     }
     else {
