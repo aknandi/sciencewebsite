@@ -25,7 +25,7 @@ function get_url($link_url) {
 	 global $overlap;
 	 return $overlap . '/' . $link_url;
 }
-
+    
 $bloglisthumanreadable = array("graphene","quantum-teleportation","genome-editing","gravitational-waves","lepton-universality");
 
 if($URL=='/') {
@@ -41,13 +41,16 @@ elseif($URL=='/sendemail') {
     include 'sendemail.php';
 }
 elseif(substr( $URL, 0, 5 ) == "/view") {
-    if(in_array(substr(strrchr($URL, "/"), 1),$bloglisthumanreadable)) {
-        $blogName = str_replace("-","",substr(strrchr($URL, "/"), 1));
-        include 'blog.php';	
+    if(in_array(substr($URL, 6),$bloglisthumanreadable)) {
+    	$blogNameHumanReadable = substr($URL, 6);	
     }
-    elseif(in_array(substr(strrchr(substr(trim($URL), 0, -1), "/"), 1),$bloglisthumanreadable) && substr($URL, -1)=="/") {
-        $blogName = str_replace("-","",substr(strrchr(substr(trim($URL), 0, -1), "/"), 1));
-	include 'blog.php';	
+    elseif(in_array(substr($URL, 6, -1),$bloglisthumanreadable) && substr($URL, -1)=="/") {
+        $blogNameHumanReadable = substr($URL, 6, -1);
+    }
+    if(isset($blogNameHumanReadable)) {
+    	$index = array_search($blogNameHumanReadable,$bloglisthumanreadable);
+        $blogName = str_replace("-","",$blogNameHumanReadable);
+        include 'blog.php';	
     }
     else {
     	include '404.php';

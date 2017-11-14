@@ -3,9 +3,6 @@
 
 <?php include "./includes/preamble.php"; ?>
 
-<head>
-<title>Test</title>
-</head>
   <body>
 
 <?php include "./includes/header.php"; ?>
@@ -19,7 +16,21 @@
                                            $file = file_get_contents("./blogs/" . $blogName . ".txt");
                                            $array = explode("\n",$file);
 					   $image_url = get_url("./blogs/" . $blogName . ".jpg");
+					   if($index != sizeof($bloglisthumanreadable)-1) {
+					      $blogNamePrevious = get_url('view') . "/" . $bloglisthumanreadable[$index+1];
+					      echo '<span style="float:left;">';
+					      echo "<p><a href='$blogNamePrevious'>&laquo; Previous article</a></p>";
+					      echo '</span>';
+					   }
+					   if($index != 0) {
+					      $blogNameNext = get_url('view') . "/" . $bloglisthumanreadable[$index-1];
+					      echo '<span style="float:right;">';
+					      echo "<p><a href='$blogNameNext'>Next article &raquo;</a></p>";
+					      echo '</span>';
+					   }
                                         ?>
+					   <br></br>
+					   <hr>
 					   <h1><?=$array[0]?></h1>
 					   <p><bd><?=$array[2]?></bd></p>
 					   <p><img class="img-responsive" src="<?=$image_url?>" alt=""></p>

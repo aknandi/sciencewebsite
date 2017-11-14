@@ -1,5 +1,22 @@
-<header class="page-header">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<?php include "./includes/preamble.php"; ?>
+
+  <body>
+
+<?php include "./includes/header.php"; ?>
+
+<br></br>
 <H1 class="page-title"> <p style="text-align: center;"> Page Not Found </p></H1>
-<h2><a href="/"><p style="text-align: center;">Click here to go to the home page</p></a> </h2>
-</header>
+
+
+
+    <!-- Bootstrap core JavaScript                                                                                                                                                                           
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
 
