@@ -20,7 +20,7 @@
 		</div>
 		<div class="row mt">	
 			<div class="col-lg-8 col-lg-offset-2">
-				<form action="./sendemail" method="POST" role="form">
+				<form action="<?=get_url('sendemail')?>" method="POST" role="form">
 				  <div class="form-group">
 				    <input type="text" class="form-control" id="NameInputEmail1" placeholder="Your Name" name="name">
 				    <br>

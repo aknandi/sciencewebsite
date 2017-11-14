@@ -113,6 +113,10 @@ a:after {
 	letter-spacing: 2px;
 }
 
+.navbar-brand-p {
+	color: #959fbf; 
+}
+
 .navbar-inverse .navbar-brand {
 	color: white;
 }

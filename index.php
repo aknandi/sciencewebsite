@@ -17,11 +17,15 @@ function get_correct_path($a, $b)
     }
     return $result;
 }
+
 $overlap = get_correct_path(__DIR__,$_SERVER['REQUEST_URI']);
 $URL = str_replace($overlap,"",$_SERVER['REQUEST_URI']);
-$number_of_levels = substr_count(substr(trim($URL), 1),'/',0);
 
-//$bloglist = array("graphene","quantumteleportation","genomeediting","gravitationalwaves","leptonuniversality");
+function get_url($link_url) {
+	 global $overlap;
+	 return $overlap . '/' . $link_url;
+}
+
 $bloglisthumanreadable = array("graphene","quantum-teleportation","genome-editing","gravitational-waves","lepton-universality");
 
 if($URL=='/') {

@@ -18,20 +18,13 @@
 				        <?php
                                            $file = file_get_contents("./blogs/" . $blogName . ".txt");
                                            $array = explode("\n",$file);
-					   echo "<h1>" . $array[0] . "</h1>";
-					   echo "<p><bd>" . $array[2] . "</bd></p>";
-					   if($number_of_levels == 0) {
-					       echo '<p><img class="img-responsive" src="./blogs/' . $blogName . '.jpg" alt=""></p>';
-					   }
-					   elseif($number_of_levels == 1) {
-					       echo '<p><img class="img-responsive" src="../blogs/' . $blogName . '.jpg" alt=""></p>';
-					   }
-					   elseif($number_of_levels == 2) {
-					       echo '<p><img class="img-responsive" src="../../blogs/' . $blogName . '.jpg" alt=""></p>';
-					   }					   
+					   $image_url = get_url("./blogs/" . $blogName . ".jpg");
                                         ?>
+					   <h1><?=$array[0]?></h1>
+					   <p><bd><?=$array[2]?></bd></p>
+					   <p><img class="img-responsive" src="<?=$image_url?>" alt=""></p>
 				        <?php
-					   //echo "<p><bd>" . $array[4] . "</bd></p>";
+					   echo "<p><bd>" . $array[4] . "</bd></p>";
 					   $file = file_get_contents("./blogs/" . $blogName . ".txt");
 					   $array = explode("\n",$file);
 					   $i = 0;
@@ -44,17 +37,7 @@
 					?>
 					<br>
 					<hr>
-                                        <?php
-					if($number_of_levels == 0) {
-                                            echo '<p><a href="./">Back</a></p>';
-                                        }
-                                        elseif($number_of_levels == 1) {
-                                            echo '<p><a href="../">Back</a></p>';
-                                        }
-                                        elseif($number_of_levels == 2) {
-                                            echo '<p><a href="../../">Back</a></p>';
-                                        }
-					?>
+					<p><a href="<?=get_url('')?>">Back</a></p>
 				</div>
 
 			</div><!-- /row -->

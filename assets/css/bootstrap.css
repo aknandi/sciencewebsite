@@ -4324,6 +4324,11 @@ textarea.input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+  background-image: url('../../includes/logo.png');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-size: contain;
+  background-position-x: 20%;
 }
 
 .navbar:before,
