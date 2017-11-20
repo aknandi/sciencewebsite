@@ -12,11 +12,12 @@
 <H1 class="page-title"> <p style="text-align: center;"> Page Not Found </p></H1>
 
 
+<?php http_response_code(404); ?>
 
     <!-- Bootstrap core JavaScript                                                                                                                                                                           
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="<?=get_url('assets/js/bootstrap.min.js')?>"></script>
   </body>
 </html>
 
